@@ -9,7 +9,8 @@ class PrivacyPage extends PureComponent {
         return (
             <div className="container">
                 <h1>Privacy</h1>
-                Privacy page
+                <img src="/static/images/icons-512.png"/>
+              Privacy page
             </div>
         );
     }

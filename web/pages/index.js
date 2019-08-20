@@ -10,7 +10,7 @@ class HomePage extends PureComponent {
             <div className="container">
                 <h1>Home</h1>
                 <img src="/static/images/icons-192.png"/>
-                Index page
+                Index page new
             </div>
         );
     }
