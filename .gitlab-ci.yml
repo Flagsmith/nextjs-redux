@@ -1,0 +1,64 @@
+stages:
+    - test
+    - deploy
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - node_modules/
+
+test:
+    image: solidstategroup/node-java-chrome:1.0
+    stage: test
+    script:
+        - npm i
+        - if [ $CI_COMMIT_REF_NAME == "staging" ]; then export ENV=staging; echo 'Setting env to' $ENV; npm run env; fi;
+        - if [ $CI_COMMIT_REF_NAME == "develop" ]; then export ENV=dev; echo 'Setting env to' $ENV; npm run env; fi;
+        - if [ $CI_COMMIT_REF_NAME == "master" ]; then export ENV=prod; echo 'Setting env to' $ENV; npm run env; fi;
+        - npm run test
+    only:
+        - master
+        - staging
+        - develop
+
+deploymaster:
+    image: solidstategroup/gitlabci-node-gcloud:1.1
+    stage: deploy
+    script:
+        - npm i
+        - export ENV=prod; npm run env
+        - npm run bundle
+        - echo $DEPLOY_KEY_FILE_PROD > /tmp/$CI_PIPELINE_ID.json
+        - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
+        - gcloud config set project bullet-train-front-end-prod
+        - gcloud app deploy
+    only:
+        - master
+
+deploystaging:
+    image: solidstategroup/gitlabci-node-gcloud:1.1
+    stage: deploy
+    script:
+        - npm i
+        - export ENV=staging; npm run env
+        - npm run bundlestaging
+        - echo $DEPLOY_KEY_FILE_STAGING > /tmp/$CI_PIPELINE_ID.json
+        - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
+        - gcloud config set project bullet-train-front-end-staging
+        - gcloud app deploy
+    only:
+        - staging
+
+deploydevelop:
+    image: solidstategroup/gitlabci-node-gcloud:1.1
+    stage: deploy
+    script:
+        - npm i
+        - export ENV=dev; npm run env
+        - npm run bundledev
+        - echo $DEPLOY_KEY_FILE_DEV > /tmp/$CI_PIPELINE_ID.json
+        - gcloud auth activate-service-account --key-file /tmp/$CI_PIPELINE_ID.json
+        - gcloud config set project bullet-train-front-end-dev
+        - gcloud app deploy
+    only:
+        - develop
