@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "now-build": "npm run build",
     "analyze": "cross-env BUNDLE_ANALYZE=both next build ./web",
     "analyze:server": "cross-env BUNDLE_ANALYZE=server next build ./web",
     "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build ./web",
@@ -57,7 +58,7 @@
     "merge-deep": "^3.0.2",
     "mocha": "^6.2.0",
     "moment": "2.22.2",
-    "next": "9.0.4-canary.1",
+    "next": "9.0.4",
     "next-offline": "^4.0.3",
     "next-redux-saga": "^4.0.2",
     "next-redux-wrapper": "^3.0.0-alpha.3",
