@@ -7,6 +7,7 @@ const nextConfig = {
     analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
     analyzeBrowser: ['browser', 'both'].includes(process.env.BUNDLE_ANALYZE),
     distDir: '../dist',
+    target: 'serverless',
     async exportPathMap(defaultPathMap, { dev, dir, outDir, distDir, buildId }) {
         return {
             '/': { page: '/' },
