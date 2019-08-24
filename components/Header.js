@@ -13,6 +13,11 @@ function Header(props) {
                 {/* Examples */}
                 <React.Fragment>
                     <li className="nav-item">
+                        <Link href="/markup">
+                            <a className="nav-link">Markup</a>
+                        </Link>
+                    </li>
+                    <li className="nav-item">
                         <Link href="/about">
                             <a className="nav-link">About</a>
                         </Link>
