@@ -58,7 +58,6 @@
     "mocha": "^6.2.0",
     "moment": "2.22.2",
     "next": "9.0.4",
-    "next-offline": "^4.0.3",
     "next-redux-saga": "^4.0.2",
     "next-redux-wrapper": "^3.0.0-alpha.3",
     "node-sass": "^4.12.0",
