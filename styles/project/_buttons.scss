@@ -1,0 +1,15 @@
+.btn-primary {
+    background-color: $brand-primary;
+    border-color: $brand-primary;
+    &:hover {
+        background-color: darken($brand-primary, 5);
+    }
+}
+
+.btn-secondary {
+    background-color: $brand-secondary;
+    border-color: $brand-secondary;
+    &:hover {
+        background-color: darken($brand-secondary, 5);
+    }
+}

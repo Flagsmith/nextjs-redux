@@ -28,34 +28,3 @@
         padding:5px 5px 5px 10px;
     }
 }
-
-.org-nav{
-    .popover-bt{
-        top:25px;
-
-        a{
-            padding:0;
-
-            &:first-of-type{
-                padding-top:0!important;
-            }
-        }
-    }
-}
-
-.popover-right{
-
-}
-
-.btn-container{
-    padding:10px;
-
-    .btn{
-        border-color: #009de2;
-        color:white;
-
-        &:hover{
-            background-color:#007aaf;
-        }
-    }
-}

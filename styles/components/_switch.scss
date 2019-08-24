@@ -14,6 +14,8 @@ $switch-height: 20px;
   border: 1px solid #ccc;
   background-color: #ccc;
   cursor: pointer;
+  -webkit-transition: all 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.35, 0, 0.25, 1);
 }
 .rc-switch-inner {
   color: #fff;
@@ -54,8 +56,8 @@ $switch-height: 20px;
   outline: none;
 }
 .rc-switch-checked {
-  border: 1px solid $btn-primary-light-bg;
-  background-color: $btn-primary-light-bg;
+  border: 1px solid $brand-primary;
+  background-color: $brand-primary;
 }
 .rc-switch-checked .rc-switch-inner {
   left: 6px;

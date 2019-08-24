@@ -11,13 +11,13 @@
   font-size:24px;
 
   &.full {
-    color: $btn-primary-bg;
+    color: $brand-primary;
     &.editable:hover {
       color: orange;
     }
   }
   &.empty {
-    color: $btn-primary-bg;
+    color: $brand-primary;
     &.editable:hover {
       color: orange;
     }
