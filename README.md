@@ -1,6 +1,4 @@
-<img src="https://ibb.co/GJGWy3Y.gif"/>
-<br/>
-<img src="https://ibb.co/2WFdcSg"/>
+<img src="http://g.recordit.co/TY8wciTsQH.gif"/>
 
 
 ## Prerequisites
