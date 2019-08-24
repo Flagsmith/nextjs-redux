@@ -11,7 +11,7 @@ const SLACK_TOKEN = process.env.SLACK_TOKEN;
 const E2E_SLACK_CHANNEL = process.env.E2E_SLACK_CHANNEL;
 let server;
 
-const Project = require('../../web/common/project');
+const Project = require('../../common/project');
 const fetch = require('node-fetch');
 global.testHelpers = require('./helpers.e2e');
 
