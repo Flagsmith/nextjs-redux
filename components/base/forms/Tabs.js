@@ -18,7 +18,7 @@ const Tabs = ({ children, className, onChange, value }) => (
                           e.preventDefault();
                           onChange(i);
                       }}
-                      className={`btn-tab btn-primary${isSelected ? ' tab-active' : ''}`}
+                      className={`btn ${isSelected ? 'tab-active' : ''}`}
                     >
                         {child.props.tablabel}
                     </Button>

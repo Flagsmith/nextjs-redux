@@ -1,9 +1,7 @@
-import React, { Component, PureComponent } from 'react';
-import propTypes from 'prop-types';
+import React, { PureComponent } from 'react';
 
 import '../project/polyfill';
 import withWidgets from '../common/providers/withWidgets';
-import InputGroup from '../components/base/forms/InputGroup';
 
 class Examples extends React.Component {
     static displayName = 'Examples';
@@ -77,9 +75,35 @@ class MarkupPage extends PureComponent {
         return (
             <div className="container">
                 <Examples>
+
+                    <FormGroup>
+                        <h4 className="mt-5 mb-5">Typeography</h4>
+                        <h1>Heading H1</h1>
+                        <h2>Heading H2</h2>
+                        <h3>Heading H2</h3>
+                        <h4>Heading H2</h4>
+                    </FormGroup>
+
+                    <FormGroup>
+                        <h4 className="mt-5 mb-5">Buttons</h4>
+                        <ButtonPrimary>Primary</ButtonPrimary>
+                    </FormGroup>
+                    <FormGroup>
+                        <ButtonSecondary>Secondary</ButtonSecondary>
+                    </FormGroup>
+
+                    <FormGroup>
+                        <ButtonTertiary>Tertiary</ButtonTertiary>
+                    </FormGroup>
+
+                    <h4 className="mt-5 mb-5">Panel</h4>
+
                     <Panel title={<h3>Test</h3>}>
                         body
                     </Panel>
+
+                    <h4 className="mt-5 mb-5">Forms</h4>
+
                     <InputGroup type="email" title="Default" placeholder="Test"/>
                     <Input type="email" title="Default" placeholder="Test"/>
                     <InputGroup
@@ -123,6 +147,7 @@ class MarkupPage extends PureComponent {
                           />
                         )}
                     />
+                    <h4 className="mt-5 mb-5">Tabs</h4>
                     <Tabs value={this.state.tab} onChange={tab => this.setState({ tab })}>
                         <div tablabel="Tab 1">
                             <p>Tab 1 content</p>

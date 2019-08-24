@@ -21,8 +21,8 @@ class InputGroup extends Component {
         } = this;
 
         return (
-            <div className={`${className} form-group mb-0`}>
-                {title ? (<label htmlFor={id} className="cols-sm-2 control-label">{title}</label>) : null}
+            <div className={`${className} form-group`}>
+                {title ? (<label htmlFor={id} className="cols-sm-2">{title}</label>) : null}
                 {inputProps && inputProps.error && (
                 <span>
                     <span> - </span>
