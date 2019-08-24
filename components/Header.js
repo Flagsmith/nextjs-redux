@@ -6,7 +6,7 @@ function Header(props) {
         <nav className="navbar navbar-fixed-top navbar-light">
             <ul className="nav justify-content-start">
                 <li className="nav-item">
-                    <Link href="/" className="nav-link">
+                    <Link href="/">
                         <a className="nav-link">Home</a>
                     </Link>
                 </li>
