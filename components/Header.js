@@ -18,8 +18,8 @@ function Header(props) {
                         </Link>
                     </li>
                     <li className="nav-item">
-                        <Link href="/privacy">
-                            <a className="nav-link">About</a>
+                        <Link href="/terms">
+                            <a className="nav-link">Terms</a>
                         </Link>
                     </li>
                     <li className="nav-item">
