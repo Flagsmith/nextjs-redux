@@ -12,7 +12,7 @@ class MyDocument extends Document {
 
     render() {
         return (
-            <html lang="en">
+            <html>
                 <Head />
                 <body>
                     <Main />
