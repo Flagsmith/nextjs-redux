@@ -1,3 +1,8 @@
+<img src="https://ibb.co/GJGWy3Y.gif"/>
+<br/>
+<img src="https://ibb.co/2WFdcSg"/>
+
+
 ## Prerequisites
 
 What things you need to install the software and how to install them
@@ -8,6 +13,12 @@ What things you need to install the software and how to install them
 | <a href="https://nodejs.org/en/">NodeJS</a>                     | >= 6.0.0 |
 | <a href="https://nodejs.org/en/">npm</a>                        | >= 4.0.0 |
 
+# Deployment with Now
+Out the box, this setup supports deploying to https://zeit.co
+```$xslt
+npm i now -g
+now
+```
 
 ## Installing
 ```
@@ -21,31 +32,6 @@ Hot reloading for client / server
 ```
 npm run dev
 ```
-
-**Production**
-
-You can deploy this application on [Heroku](https://www.heroku.com/) and [Dokku](http://dokku.viewdocs.io/dokku/) without making any changes, other than the API URL in [project_prod.js](/env/project_prod.js)
-
-Bundles, minifies and cache busts the project to a build folder and runs node in production. This can be used as part of your deployment script.
-
-```
-npm start
-```
-
-You can also deploy this application to static hosts such as [Amazon S3](https://aws.amazon.com/s3/) buckets by modifying the `package.json` start script to use `html_bundle` instead of `bundle`.
-
-**E2E Testing**
-
-This project uses [Nightwatch](http://nightwatchjs.org/) for automated end to end testing with chromedriver.
-```
-npm test
-```
-
-## Built With
-- React
-- Webpack
-- Node
-- Nightwatch
 
 ## Contributing
 
