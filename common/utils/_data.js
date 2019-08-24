@@ -1,4 +1,5 @@
 import fetch from 'isomorphic-unfetch';
+import '../project';
 
 const getQueryString = (params) => {
     const esc = encodeURIComponent;
