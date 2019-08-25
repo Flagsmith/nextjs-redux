@@ -9,7 +9,7 @@ const withAuth = (WrappedComponent) => {
     )(WrappedComponent);
 };
 
-export default(withAuth);
+export default (withAuth);
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     login: AppActions.login,

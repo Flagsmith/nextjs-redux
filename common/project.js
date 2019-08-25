@@ -6,6 +6,7 @@ export default global.Project = {
         DATA: true,
         STORE: true,
         DISPATCHER: true,
+        SERVER: true,
     },
 };
 if (typeof ENV_NAME !== 'undefined' && typeof ENV_TYPE !== 'undefined') {

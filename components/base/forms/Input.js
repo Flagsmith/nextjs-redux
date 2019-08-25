@@ -4,9 +4,9 @@
 import React from 'react';
 import MaskedInput from 'react-maskedinput';
 import propTypes from 'prop-types';
-
-
 import cn from 'classnames';
+
+import Utils from '../../../common/utils/utils';
 
 const maskedCharacters = {
     'a': {

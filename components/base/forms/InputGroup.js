@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import propTypes from 'prop-types';
-
+import Utils from '../../../common/utils/utils';
 
 class InputGroup extends Component {
     render() {

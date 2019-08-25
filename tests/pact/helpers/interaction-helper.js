@@ -1,5 +1,3 @@
-const { Matchers: { like } } = require('@pact-foundation/pact');
-
 module.exports = ({
     body,
     method,

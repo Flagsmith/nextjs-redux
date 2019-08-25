@@ -1,4 +1,4 @@
-import fetch from 'node-fetch';
+import fetch from 'isomorphic-unfetch';
 import { Pact } from '@pact-foundation/pact';
 import path from 'path';
 import { consumer, provider } from '../config.pact';

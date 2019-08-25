@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch';
-import '../project';
+import Constants from './constants';
 
 const getQueryString = (params) => {
     const esc = encodeURIComponent;
@@ -27,6 +27,7 @@ const _data = {
                     document.getElementById('e2e-error').innerText = JSON.stringify(error);
                 }
                 API.log(response.url, response.status, err);
+                // eslint-disable-next-line
                 return Promise.reject({ ...response, _bodyText: err });
             });
     },
@@ -65,9 +66,7 @@ const _data = {
             },
         };
 
-        let req;
-
-        var qs = '';
+        let qs = '';
 
         if (method !== 'get') options.headers['Content-Type'] = 'application/json; charset=utf-8';
 
@@ -77,7 +76,7 @@ const _data = {
 
         if (data) {
             if (method === 'get') {
-                var qs = getQueryString(data);
+                qs = getQueryString(data);
                 url += url.indexOf('?') !== -1 ? `&${qs}` : `?${qs}`;
             } else {
                 options.body = JSON.stringify(data);
@@ -96,7 +95,7 @@ const _data = {
 
         API.log('API', 'REQUEST', method, url, data, headers);
 
-        req = fetch(url, options);
+        const req = fetch(url, options);
         return req
             .then(_data.status)
             .then((response) => { // always return json
@@ -113,7 +112,7 @@ const _data = {
                 API.log('API', 'RESPONSE', method, url, 'Response body', response, 'Original request', options);
                 return response;
             })
-            .catch((e) => {
+            .catch(() => {
                 throw new Error(Constants.simulate.FAKE_API_ERROR ? 'API Error' : 'Network request failed');
             });
     },

@@ -3,7 +3,6 @@
  */
 
 // Vendor
-import moment from 'moment';
 import expect from 'expect';
 
 // Application
@@ -21,12 +20,6 @@ describe('format - `enumeration.get`', () => {
     expect(set(null)).toEqual('');
     expect(set('My Constant')).toEqual('MY_CONSTANT');
     expect(set('test')).toEqual('TEST');
-});
-
-describe('format - `age`', () => {
-    const { age } = Format;
-    expect(age(null)).toEqual(null);
-    expect(age(moment().add('years', -18))).toEqual(18);
 });
 
 describe('format - `camelCase`', () => {

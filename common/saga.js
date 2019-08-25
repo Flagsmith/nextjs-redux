@@ -2,6 +2,7 @@ import { put, all, takeLatest } from 'redux-saga/effects';
 // import _data from './utils/_data';
 import './app-actions';
 import _data from './utils/_data';
+import Utils from './utils/utils';
 
 export function* startup(action = {}) {
     const token = action.token;

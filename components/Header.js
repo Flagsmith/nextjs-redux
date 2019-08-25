@@ -23,7 +23,7 @@ function Header(props) {
             <ul className="nav justify-content-end">
                 <li className="nav-item">
                     {props.user ? (
-                        <a className="nav-link" onClick={props.logout}>Logout</a>
+                        <a role="button" className="nav-link" onClick={props.logout}>Logout</a>
                     ) : (
                         <Link href="/login">
                             <a className="nav-link">Login</a>
@@ -34,4 +34,8 @@ function Header(props) {
         </nav>
     );
 }
+Header.propTypes = {
+    user: propTypes.object,
+    logout: propTypes.func.isRequired,
+};
 export default withAuth(Header);

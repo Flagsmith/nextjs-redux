@@ -66,13 +66,13 @@ module.exports = {
         'react/no-array-index-key': 0, // there are valid cases for this where a key can not be determined
         'react/no-direct-mutation-state': 0,
         'react/no-find-dom-node': 0,
+        'jsx-a11y/anchor-is-valid': 0,
         'react/no-multi-comp': 0,
         'react/no-string-refs': 0, // todo: Disable for now, need to update probably for react 17
         'react/no-unescaped-entities': 0, // there are valid cases for this where a key can not be determined
         'react/require-default-props': 0,
     },
     'globals': {
-        '$': true,
         '_': true,
         '__DEV__': true,
         'AccountStore': true,
@@ -81,24 +81,16 @@ module.exports = {
         'API': true,
         'AppActions': true,
         'AsyncStorage': true,
-        'closeModal': true,
+        'Utils': true,
         'Constants': true,
-        'Cookies': true,
-        'ErrorMessage': true,
         'describe': true,
-        'Dispatcher': true,
-        'ES6Component': true,
         'E2E': true,
         'Format': true,
         'FormGroup': true,
         'ga': true,
-        'hot': true,
         'Link': true,
-        'Loader': true,
         'mixpanel': true,
-        'moment': true,
-        'openConfirm': true,
-        'openModal': true,
+        'Loader': true,
         'Project': true,
         'cn': true,
         'ENV_NAME': true,
@@ -109,8 +101,5 @@ module.exports = {
         'ReactDOM': true,
         'Row': true,
         'pact': true,
-        'toast': true,
-        'Utils': true,
-        'window': true
     }
 };

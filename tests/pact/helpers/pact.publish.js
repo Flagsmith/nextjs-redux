@@ -2,6 +2,7 @@ import { namespace } from '../config.pact';
 
 const pact = require('@pact-foundation/pact-node');
 const path = require('path');
+
 require('dotenv').config();
 
 if (process.env.PACT_BROKER) {
@@ -17,7 +18,7 @@ if (process.env.PACT_BROKER) {
     pact.publishPacts(opts)
         .then(() => {
         })
-        .catch((e) => {
+        .catch(() => {
         });
 } else {
     console.log('Skipping pact publish, no PACT_BROKER env variable found!');

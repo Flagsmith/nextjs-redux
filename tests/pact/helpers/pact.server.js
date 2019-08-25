@@ -1,5 +1,4 @@
 const bodyParser = require('body-parser');
-
 const app = require('express')();
 const cors = require('cors');
 
@@ -34,11 +33,12 @@ module.exports = {
                 resolve();
             });
 
-            app.get('/', (req, res, next) => {
+            app.get('/', (req, res) => {
                 console.log(new Date());
                 res.json({ status: 'OK', date: new Date() });
             });
-            app.post('/', (req, res, next) => {
+
+            app.post('/', (req, res) => {
                 console.log(req.body);
                 res.json({ status: 'OK', date: new Date() });
             });

@@ -2,17 +2,16 @@
 // of tests (without needing to resort to alphabetical filenaming)
 global.window = global;
 require('dotenv').config();
-const path = require('path');
-const slackUpload = require('./slack-upload.test');
 const fork = require('child_process').fork;
+const path = require('path');
+
+const slackUpload = require('./slack-upload.test');
 
 process.env.PORT = 8081;
 const SLACK_TOKEN = process.env.SLACK_TOKEN;
 const E2E_SLACK_CHANNEL = process.env.E2E_SLACK_CHANNEL;
 let server;
 
-const Project = require('../../common/project');
-const fetch = require('node-fetch');
 global.testHelpers = require('./helpers.e2e');
 
 module.exports = Object.assign(

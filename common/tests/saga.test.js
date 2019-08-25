@@ -1,13 +1,15 @@
-import { put, all, takeLatest } from 'redux-saga/effects';
+import { put } from 'redux-saga/effects';
 import expect from 'expect';
 import _ from 'lodash';
 
-import saga, { startup } from '../saga';
+import { startup } from '../saga';
 import API from '../../project/api';
 
+// Polyfill out API funcs
 _.each(API, (f, k) => {
     API[k] = () => {};
 });
+
 global.API = API;
 
 describe('startup', () => {

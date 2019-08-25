@@ -4,7 +4,9 @@ import filter from 'lodash/filter';
 const KEYCODE_Y = 89;
 const KEYCODE_Z = 90;
 const Utils = {
+    // eslint-disable-next-line
     emailRegex: /^([\w-+]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i,
+    // eslint-disable-next-line
     urlRegex: /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]+(:[0-9]{1,5})?(\/.*)?$/,
 
     keys: {
@@ -147,15 +149,11 @@ const Utils = {
         return e && e.target ? e.target.value : e;
     },
 
-    isInPast/* istanbul ignore next */(when) { // returns bool
-        return moment().diff(moment(when), 'miliseconds') > 0;
-    },
-
     isValidEmail(text) { // returns bool
         return Utils.emailRegex.test(text);
     },
 
-    GUID(append) {
+    GUID(append = '') {
         let d = new Date().getTime();
         const uuid = 'xxxx-xxxx-xxxx'.replace(/[xy]/g, (c) => {
             // eslint-disable-next-line

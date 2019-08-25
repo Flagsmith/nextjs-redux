@@ -7,10 +7,7 @@ import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 import Header from '../components/Header';
 
-import '../common/utils';
-import '../components/base';
-import '../project/api';
-import '../styles/styles.scss';
+import '../project/polyfill';
 import createStore from '../common/store';
 
 // For debugging reasons for re-rendering components we use whyDidYouRender in dev mode

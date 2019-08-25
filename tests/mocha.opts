@@ -1,2 +1,2 @@
 --require @babel/register
-./web/**/*.test.js
+./common/**/*.test.js

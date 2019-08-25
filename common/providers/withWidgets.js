@@ -9,7 +9,7 @@ const withWidgets = (WrappedComponent) => {
     )(WrappedComponent);
 };
 
-export default(withWidgets);
+export default (withWidgets);
 
 const mapDispatchToProps = dispatch => bindActionCreators({
     getWidgets: AppActions.getWidgets,

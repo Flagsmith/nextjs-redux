@@ -1,17 +1,8 @@
 import React from 'react';
 import cn from 'classnames';
 
-global.Button = class extends React.Component {
+const Button = global.Button = class extends React.PureComponent {
     static displayName = 'Button';
-
-    constructor(props, context) {
-        super(props, context);
-        this.state = {};
-    }
-
-    onMouseUp = () => {
-        this.refs.button.blur();
-    };
 
     render() {
         const { children, ...rest } = this.props;
@@ -29,33 +20,34 @@ global.Button = class extends React.Component {
             </button>
         );
     }
-}
+};
 
 export default Button;
 
-export const ButtonPrimary = global.ButtonPrimary = props => (
-    <Button
-      {...props}
-      className={cn(props.className, 'btn btn-primary')}
-    >
-        {props.children}
-    </Button>
-);
+export const ButtonPrimary = global.ButtonPrimary = class extends React.PureComponent {
+    static displayName = 'ButtonPrimary';
 
-export const ButtonSecondary = global.ButtonSecondary = props => (
-    <Button
-      {...props}
-      className={cn(props.className, 'btn btn-secondary')}
-    >
-        {props.children}
-    </Button>
-);
+    render() {
+        const { props } = this;
+        return (
+            <Button
+              {...props}
+              className={cn(props.className, 'btn btn-primary')}
+            />
+        );
+    }
+};
 
-export const ButtonTertiary = global.ButtonTertiary = props => (
-    <Button
-      {...props}
-      className={cn(props.className, 'btn btn-outline-primary')}
-    >
-        {props.children}
-    </Button>
-);
+export const ButtonButtonTertiary = global.ButtonButtonTertiary = class extends React.PureComponent {
+    static displayName = 'ButtonButtonTertiary';
+
+    render() {
+        const { props } = this;
+        return (
+            <Button
+              {...props}
+              className={cn(props.className, 'btn btn-outline-primary')}
+            />
+        );
+    }
+};

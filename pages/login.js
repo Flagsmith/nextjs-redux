@@ -1,8 +1,9 @@
 // import propTypes from 'prop-types';
 import React, { PureComponent } from 'react';
 import '../project/polyfill';
-import withAuth from '../common/providers/withAuth';
 import propTypes from 'prop-types';
+
+import withAuth from '../common/providers/withAuth';
 
 class LoginPage extends PureComponent {
     static displayName = 'LoginPage';

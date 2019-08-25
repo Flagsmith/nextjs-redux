@@ -1,3 +1,3 @@
-export const namespace = 'adherium-mobile-adherium-api';
-export const consumer = 'adherium-mobile';
-export const provider = 'adherium-api';
+export const namespace = 'theproject-mobile-adherium-api';
+export const consumer = 'theproject-mobile';
+export const provider = 'theproject-api';
