@@ -3,7 +3,7 @@ import Router from 'next/router';
 import cookie from 'cookie';
 import cookies from 'js-cookie';
 
-
+import Project from '../common/project';
 const API = {
     ajaxHandler(type, e) {
         return { type, error: e.message };

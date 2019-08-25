@@ -57,16 +57,17 @@ module.exports = {
                 'maximum': 3
             }
         ],
+        'jsx-a11y/anchor-is-valid': 0,
         'react/destructuring-assignment': 0,
         'react/forbid-prop-types': 0,
         'react/jsx-filename-extension': 0,
         'react/jsx-no-undef': 0,
+        'react/jsx-pascal-case': 0,
         'react/jsx-tag-spacing': 0, //Disabled to it not looking for global components
         'react/no-access-state-in-setstate': 0,
         'react/no-array-index-key': 0, // there are valid cases for this where a key can not be determined
         'react/no-direct-mutation-state': 0,
         'react/no-find-dom-node': 0,
-        'jsx-a11y/anchor-is-valid': 0,
         'react/no-multi-comp': 0,
         'react/no-string-refs': 0, // todo: Disable for now, need to update probably for react 17
         'react/no-unescaped-entities': 0, // there are valid cases for this where a key can not be determined
@@ -89,6 +90,8 @@ module.exports = {
         'FormGroup': true,
         'ga': true,
         'Link': true,
+        'openAlert': true,
+        'openConfirm': true,
         'mixpanel': true,
         'Loader': true,
         'Project': true,

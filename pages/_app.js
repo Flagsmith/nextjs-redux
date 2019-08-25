@@ -49,6 +49,8 @@ class MyApp extends App {
                         </Head>
                         <Header/>
                         <Component {...pageProps} />
+                        <div id="confirm"/>
+                        <div id="alert"/>
                     </React.Fragment>
                 </Provider>
             </Container>

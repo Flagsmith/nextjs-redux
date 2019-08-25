@@ -104,6 +104,28 @@ class MarkupPage extends Component {
                         <ButtonTertiary onClick={this.toggle}>Tertiary</ButtonTertiary>
                     </FormGroup>
 
+                    <Row>
+                        <ButtonTertiary className="mr-2" onClick={this.toggle}>Toggle inline modal</ButtonTertiary>
+                        <ButtonTertiary
+                          className="mr-2"
+                          onClick={() => openConfirm('Confirm', 'Body',
+                              () => {
+                                  alert('Selected Yes');
+                              },
+                              () => {
+                                  alert('Selected No');
+                              })}
+                        >
+                            Open confirm
+                        </ButtonTertiary>
+                        <ButtonTertiary
+                          onClick={() => openAlert('Confirm', 'Body', () => {
+                              alert('Dismissed');
+                          })}
+                        >
+                            Open alert
+                        </ButtonTertiary>
+                    </Row>
                     <h4 className="mt-5 mb-5">Panel</h4>
 
                     <Panel title={<h3>Test</h3>}>
@@ -132,18 +154,22 @@ class MarkupPage extends Component {
                       title="Valid Email"
                       placeholder="Enter an Email"
                     />
-                    <InputGroup
-                      inputProps={{ mask: '11/11' }}
-                      name="expiry"
-                      placeholder="dd/yy"
-                      title="Masked"
-                    />
-                    <InputGroup
-                      inputProps={{ mask: '11:11 am' }}
-                      name="expiry"
-                      placeholder="hh:mm am"
-                      title="Masked"
-                    />
+                    <Row>
+                        <InputGroup
+                          inputProps={{ mask: '11/11' }}
+                          name="expiry"
+                          placeholder="dd/yy"
+                          title="Masked"
+                        />
+                    </Row>
+                    <Row>
+                        <InputGroup
+                          inputProps={{ mask: '11:11 am' }}
+                          name="expiry"
+                          placeholder="hh:mm am"
+                          title="Masked"
+                        />
+                    </Row>
                     <InputGroup
                       title="Switch"
                       input={(
@@ -194,7 +220,6 @@ class MarkupPage extends Component {
                             <Button color="secondary" onClick={this.toggle}>Cancel</Button>
                         </ModalFooter>
                     </Modal>
-
                 </Examples>
             </div>
         );
