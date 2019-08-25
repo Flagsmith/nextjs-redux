@@ -44,7 +44,6 @@ class MyApp extends App {
                             <link rel="manifest" href="/static/manifest.json"/>
                             <link rel="manifest" href="/static/site.webmanifest"/>
                             <link rel="shortcut icon" href="/static/images/favicon.ico"/>
-                            <script src="../static/chrome-fix.js"/>
                             <title>TheProject</title>
                         </Head>
                         <Header/>
