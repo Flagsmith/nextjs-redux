@@ -16,11 +16,8 @@ import sortBy from 'lodash/sortBy';
 import differenceWith from 'lodash/differenceWith';
 import set from 'lodash/set';
 import groupBy from 'lodash/groupBy';
-import moment from 'moment/min/moment.min';
 
-global.moment = moment;
-
-global._ = {
+export default {
     each,
     filter,
     find,

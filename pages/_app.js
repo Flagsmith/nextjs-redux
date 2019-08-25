@@ -7,6 +7,8 @@ import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
 import Header from '../components/Header';
 
+import '../common/utils';
+import '../components/base';
 import '../project/api';
 import '../styles/styles.scss';
 import createStore from '../common/store';

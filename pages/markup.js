@@ -1,7 +1,10 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+import propTypes from 'prop-types';
+import { ModalHeader, Modal, ModalBody, ModalFooter } from '../components/Modal';
 
-import '../project/polyfill';
 import withWidgets from '../common/providers/withWidgets';
+import DatePicker from '../components/DatePicker';
+import Switch from 'rc-switch';
 
 class Examples extends React.Component {
     static displayName = 'Examples';
@@ -58,7 +61,7 @@ class Examples extends React.Component {
     }
 }
 
-class MarkupPage extends PureComponent {
+class MarkupPage extends Component {
     displayName = 'MarkupPage';
 
     static async getInitialProps({ ctx: { store } }) {
@@ -69,6 +72,10 @@ class MarkupPage extends PureComponent {
     constructor(props) {
         super(props);
         this.state = {};
+    }
+
+    toggle=() => {
+        this.setState({ modal: !this.state.modal });
     }
 
     render() {
@@ -85,15 +92,15 @@ class MarkupPage extends PureComponent {
                     </FormGroup>
 
                     <FormGroup>
-                        <h4 className="mt-5 mb-5">Buttons</h4>
-                        <ButtonPrimary>Primary</ButtonPrimary>
+                        <h4 className="mt-5 mb-5">Buttons (click to toggle modal)</h4>
+                        <ButtonPrimary onClick={this.toggle}>Primary</ButtonPrimary>
                     </FormGroup>
                     <FormGroup>
-                        <ButtonSecondary>Secondary</ButtonSecondary>
+                        <ButtonSecondary onClick={this.toggle}>Secondary</ButtonSecondary>
                     </FormGroup>
 
                     <FormGroup>
-                        <ButtonTertiary>Tertiary</ButtonTertiary>
+                        <ButtonTertiary onClick={this.toggle}>Tertiary</ButtonTertiary>
                     </FormGroup>
 
                     <h4 className="mt-5 mb-5">Panel</h4>
@@ -147,6 +154,7 @@ class MarkupPage extends PureComponent {
                           />
                         )}
                     />
+
                     <h4 className="mt-5 mb-5">Tabs</h4>
                     <Tabs value={this.state.tab} onChange={tab => this.setState({ tab })}>
                         <div tablabel="Tab 1">
@@ -173,6 +181,21 @@ class MarkupPage extends PureComponent {
                           />
                           )}
                     />
+
+                    <div>
+                        <Button color="danger" onClick={this.toggle}>{this.props.buttonLabel}</Button>
+                        <Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
+                            <ModalHeader toggle={this.toggle}>Modal title</ModalHeader>
+                            <ModalBody>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="primary" onClick={this.toggle}>Do Something</Button>
+                                {' '}
+                                <Button color="secondary" onClick={this.toggle}>Cancel</Button>
+                            </ModalFooter>
+                        </Modal>
+                    </div>
 
                 </Examples>
             </div>

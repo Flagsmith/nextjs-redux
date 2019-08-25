@@ -17,21 +17,6 @@ function Header(props) {
                             <a className="nav-link">Markup</a>
                         </Link>
                     </li>
-                    <li className="nav-item">
-                        <Link href="/about">
-                            <a className="nav-link">About</a>
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link href="/terms">
-                            <a className="nav-link">Terms</a>
-                        </Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link href="/privacy">
-                            <a className="nav-link">Privacy</a>
-                        </Link>
-                    </li>
                 </React.Fragment>
                 {/* End of Examples */}
             </ul>

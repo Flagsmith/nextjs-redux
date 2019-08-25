@@ -1,5 +1,3 @@
-import moment from 'moment/min/moment.min';
-
 const Format = {
 
     enumeration: {
@@ -12,17 +10,6 @@ const Format = {
         set(value) { // My Constant > MY_CONSTANT
             return value ? value.replace(/ /g, '_').toUpperCase() : '';
         },
-    },
-
-    age(value) { // DATE > 10
-        if (value) {
-            const a = moment();
-
-
-            const b = moment(value);
-            return a.diff(b, 'years');
-        }
-        return value;
     },
 
     camelCase(val) { // hello world > Hello world
