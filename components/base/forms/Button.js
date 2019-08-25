@@ -38,7 +38,21 @@ export const ButtonPrimary = global.ButtonPrimary = class extends React.PureComp
     }
 };
 
-export const ButtonButtonTertiary = global.ButtonButtonTertiary = class extends React.PureComponent {
+export const ButtonSecondary = global.ButtonSecondary = class extends React.PureComponent {
+    static displayName = 'ButtonSecondary';
+
+    render() {
+        const { props } = this;
+        return (
+            <Button
+              {...props}
+              className={cn(props.className, 'btn btn-secondary')}
+            />
+        );
+    }
+};
+
+export const ButtonTertiary = global.ButtonTertiary = class extends React.PureComponent {
     static displayName = 'ButtonButtonTertiary';
 
     render() {

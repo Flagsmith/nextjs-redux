@@ -5,16 +5,10 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
-import Header from '../components/Header';
 
 import '../project/polyfill';
 import createStore from '../common/store';
-
-// For debugging reasons for re-rendering components we use whyDidYouRender in dev mode
-
-if (__DEV__ && typeof window !== 'undefined') {
-    const whyDidYouRender = require('@welldone-software/why-did-you-render/dist/no-classes-transpile/umd/whyDidYouRender.min.js'); whyDidYouRender(React);
-}
+import Header from '../components/Header';
 
 class MyApp extends App {
     static async getInitialProps({ Component, ctx }) {

@@ -1,11 +1,10 @@
-// REDUCERS
-import Utils from './utils/utils';
-
 export default (state = {
     isConnected: true,
 }, action) => {
     if (typeof window === 'undefined') {
-        Utils.log('SERVER', action.type);
+        API.log('SERVER', action.type);
+    } else {
+        API.log('DISPATCHER', action.type);
     }
     switch (action.type) {
         case Actions.LOGIN:
