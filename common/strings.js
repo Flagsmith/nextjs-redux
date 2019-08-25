@@ -1,10 +1,10 @@
 const Strings = {
     en: {
-        title: 'Title',
+        title: 'Hello from England',
         colour: 'colour',
     },
     'en-US': {
-        colour: 'color',
+        title: 'Hello from US',
     },
 };
 export default Strings;

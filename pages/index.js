@@ -13,6 +13,7 @@ class HomePage extends PureComponent {
         return (
             <div className="container">
                 <h1>Home</h1>
+                {Strings.title}
             </div>
         );
     }
