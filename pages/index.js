@@ -5,11 +5,14 @@ class HomePage extends PureComponent {
 
     static whyDidYouRender = __DEV__;
 
+    componentDidMount() {
+        API.trackPage('Home');
+    }
+
     render() {
         return (
             <div className="container">
                 <h1>Home</h1>
-                Index page new
             </div>
         );
     }

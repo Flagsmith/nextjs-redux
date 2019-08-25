@@ -14,6 +14,10 @@ class LoginPage extends PureComponent {
 
     static whyDidYouRender = __DEV__;
 
+    componentDidMount() {
+        API.trackPage('Login');
+    }
+
     render() {
         return (
             <div>

@@ -65,10 +65,10 @@ const BaseActions = {
         return { type: Actions.LOGIN_ERROR, error };
     },
     // STARTUP
-    startup(token) {
+    startup(data) {
         return {
             type: Actions.STARTUP,
-            token,
+            data,
         };
     },
     startupLoaded: (user) => {

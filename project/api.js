@@ -4,6 +4,7 @@ import cookie from 'cookie';
 import cookies from 'js-cookie';
 
 import Project from '../common/project';
+
 const API = {
     ajaxHandler(type, e) {
         return { type, error: e.message };
@@ -21,6 +22,27 @@ const API = {
             return parsedCookies && parsedCookies.token;
         }
         cookies.get('token');
+    },
+    getStoredLocale(req) {
+        if (req) {
+            // Attempt to get locale saved cookie
+            const parsedCookies = cookie.parse(req.headers.cookie || '');
+            if (parsedCookies.locale) {
+                return parsedCookies.locale;
+            }
+            // Attempt to retrieve local from Accept-Language headers
+            if (req.headers && req.headers['accept-language']) {
+                const parsedLocale = req.headers['accept-language'].split(',')[0];
+                if (parsedLocale) {
+                    return parsedLocale;
+                }
+            }
+        }
+
+        return Constants.defaultLocale;
+    },
+    setStoredLocale(v) {
+        return cookies.set('locale', v);
     },
     setStoredToken(v) {
         return cookies.set('token', v);
@@ -105,28 +127,9 @@ const API = {
             mixpanel.reset();
         }
     },
-    log([type, ...rest]) {
-        if (__DEV__ && Project.logs[type]) {
-            // eslint-disable-next-line
-            console.log.apply(this, rest);
-        }
-    },
-    info([type, ...rest]) {
-        if (__DEV__ && Project.logs[type]) {
-            // eslint-disable-next-line
-            console.log.apply(this, rest);
-        }
-    },
-    error([type, ...rest]) {
-        if (__DEV__ && Project.logs[type]) {
-            // eslint-disable-next-line
-            console.log.apply(this, rest);
-        }
-    },
-    warn([type, ...rest]) {
-        if (__DEV__ && Project.logs[type]) {
-            // eslint-disable-next-line
-            console.info.apply(this, rest);
+    log(namespace, ...args) {
+        if (Project.logs[namespace]) {
+            console.log.apply(this, [namespace, ...args]);
         }
     },
 };

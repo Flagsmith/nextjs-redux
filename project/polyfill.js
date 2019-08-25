@@ -2,8 +2,10 @@ import propTypes from 'prop-types';
 import '../common/utils';
 import '../components/base';
 import './api';
+import './localization';
 import '../styles/styles.scss';
 import React from 'react';
+
 
 global.propTypes = propTypes;
 // For debugging reasons for re-rendering components we use whyDidYouRender in dev mode

@@ -5,9 +5,12 @@ import _data from './utils/_data';
 import Utils from './utils/utils';
 
 export function* startup(action = {}) {
-    const token = action.token;
+    const {
+        token,
+        ...rest
+    } = action.data;
     const isOnline = typeof navigator === 'undefined' ? true : navigator.onLine;
-    yield put({ type: Actions.STARTUP_LOADED, data: { ready: true, isOnline } });
+    yield put({ type: Actions.STARTUP_LOADED, data: { ready: true, isOnline, ...rest } });
     if (token) {
         yield put({ type: Actions.LOGIN_LOADED, data: { ready: true, token } });
     }

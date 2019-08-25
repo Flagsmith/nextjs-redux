@@ -84,6 +84,7 @@ module.exports = {
         'AsyncStorage': true,
         'Utils': true,
         'Constants': true,
+        'Strings': true,
         'describe': true,
         'E2E': true,
         'Format': true,

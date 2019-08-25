@@ -68,6 +68,7 @@
     "react": "^16.8.4",
     "react-datepicker": "^2.8.0",
     "react-dom": "^16.8.4",
+    "react-localization": "^1.0.15",
     "react-maskedinput": "^4.0.1",
     "react-redux": "5.1.1",
     "reactstrap": "8.0.1",
