@@ -7,7 +7,6 @@ const path = require('path');
 
 const slackUpload = require('./slack-upload.test');
 
-process.env.PORT = 8081;
 const SLACK_TOKEN = process.env.SLACK_TOKEN;
 const E2E_SLACK_CHANNEL = process.env.E2E_SLACK_CHANNEL;
 let server;
@@ -29,7 +28,7 @@ module.exports = Object.assign(
         },
         after: (browser, done) => {
             if (browser.sessionId) { //
-                return browser.waitForElementVisible('#e2e-request',
+                return browser.waitForElementPresent('#e2e-request',
                     () => browser.getText('#e2e-error', error => browser.getText('#e2e-request', (request) => {
                         if (error.value && error.value !== '{}') {
                             // Get last request + error info from the DOM

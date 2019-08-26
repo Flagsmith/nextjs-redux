@@ -1,14 +1,13 @@
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
+const withOffline = require('next-offline');
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.BUNDLE_ANALYZE === 'true',
 });
-const { join } = require('path');
-const withOffline = require('next-offline');
 
 const nextConfig = {
-    // distDir: '../dist',
     target: 'serverless',
+    // next-offline options
     workboxOpts: {
         swDest: 'static/service-worker.js',
         runtimeCaching: [
@@ -29,22 +28,13 @@ const nextConfig = {
             },
         ],
     },
-
     // buildId, dev, isServer, defaultLoaders, webpack
     webpack: (config, { dev }) => {
         const base = dev ? require('./webpack/webpack.config.dev') : require('./webpack/webpack.config.prod');
         if (base.plugins) {
             config.plugins = config.plugins.concat(base.plugins);
         }
-        // if (base.module && base.module.rules) {
-        //     config.module.rules = config.module.rules.concat(base.module.rules);
-        // }
-        //
-        //
-        // if (config.optimization.splitChunks.cacheGroups && config.optimization.splitChunks.cacheGroups.commons) {
-        //     config.optimization.splitChunks.cacheGroups.commons.minChunks = 4;
-        // }
-        //
+
         return config;
     },
 };

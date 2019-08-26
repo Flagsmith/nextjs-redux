@@ -37,6 +37,7 @@ module.exports = {
                 'browserName': 'chrome',
                 'javascriptEnabled': true, // turn off to test progressive enhancement
                 'chromeOptions': {
+                    w3c: false,
                     'args': os.platform() === 'linux' ? ['headless', 'no-sandbox', browserSize] : [browserSize],
                 },
             },

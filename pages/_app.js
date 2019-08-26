@@ -62,6 +62,14 @@ class MyApp extends App {
                         <Component {...pageProps} />
                         <div id="confirm"/>
                         <div id="alert"/>
+                        {
+                            E2E && (
+                                <React.Fragment>
+                                    <div className="e2e" id="e2e-request" />
+                                    <div className="e2e" id="e2e-error" />
+                                </React.Fragment>
+                            )
+                        }
                     </React.Fragment>
                 </Provider>
             </Container>

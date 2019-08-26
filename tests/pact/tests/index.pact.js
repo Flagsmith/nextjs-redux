@@ -1,3 +1,4 @@
+// run npm test:pact:server for a mocked api
 module.exports = {
     adherenceStats: {
         get: {

@@ -25,5 +25,7 @@ app.prepare().then(() => {
     }).listen(PORT, (err) => {
         if (err) throw err;
         console.log('Ready on http://localhost:3000');
+        // Send a message to ensure E2E knows the server is ready
+        process.send('Ready');
     });
 });

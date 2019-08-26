@@ -3,3 +3,7 @@
 @import "project/index";
 @import "flexbox/index";
 @import "variables";
+
+.e2e {
+  pointer-events: none !important;
+}

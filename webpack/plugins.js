@@ -8,11 +8,6 @@ const props = {
 
 module.exports = [
 
-    new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-    }),
-
     new webpack.DefinePlugin(props),
 
     // Fixes warning in moment-with-locales.min.js

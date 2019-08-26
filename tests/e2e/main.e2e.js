@@ -1,9 +1,9 @@
-const url = `http://localhost:${process.env.PORT || 8080}`;
+const url = `http://localhost:${process.env.PORT || 3000}`;
 
 module.exports = {
     '[Main Tests] - Register': function (browser) {
         browser
             .url(url) // visit the url
-            .waitForElementVisible('#app>div'); // wait for the sign up fields to show
+            .waitForElementVisible('.container'); // wait for the sign up fields to show
     },
 };
