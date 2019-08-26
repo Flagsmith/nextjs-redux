@@ -11,36 +11,31 @@ import '../project/polyfill';
 import createStore from '../common/store';
 import Header from '../components/Header';
 
-const initialRender = false;
+let initialRender = false;
 
 class MyApp extends App {
     static async getInitialProps({ Component, ctx }) {
         let pageProps;
-        if (!ctx.store.getState().ready) {
-            const locale = API.getStoredLocale(ctx.req);
-            Strings.setLanguage(locale);
-            // Retrieve token cookie from req.headers
-            const token = API.getStoredToken(ctx.req);
-            // Post startup action with token || null
-            await ctx.store.dispatch(AppActions.startup({ token, locale }));
-        }
-
-        if (Component.getInitialProps) {
+        const locale = API.getStoredLocale(ctx.req); // Retrieve the locale from cookie or headers
+        const token = API.getStoredToken(ctx.req); // Retrieve token cookie from req.headers
+        await ctx.store.dispatch(AppActions.startup({ token, locale })); // Post startup action with token and locale
+        if (Component.getInitialProps) { // Wait for pages to complete any async getInitialProps
             pageProps = await Component.getInitialProps({ ctx });
         }
-
         return { pageProps };
     }
 
     render() {
         const { Component, pageProps, store } = this.props;
 
-        if (!initialRender) {
+        if (!initialRender) { // Ensure we set the locale before rendering anything
+            initialRender = true;
             const locale = store.getState().locale;
             if (locale) {
                 Strings.setLanguage(locale);
             }
         }
+
         return (
             <Container>
                 <Provider store={store}>
