@@ -10,7 +10,7 @@
       }
     },
     {
-      "src": "^/service-worker.js$",
+      "src": "^/favicon.ico$",
       "dest": "/static/images/favicon.ico",
       "headers": {
         "cache-control": "public, max-age=43200, immutable"

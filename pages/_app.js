@@ -49,7 +49,6 @@ class MyApp extends App {
                             <link rel="apple-touch-icon" href="/static/images/icons-192.png"/>
                             <link rel="icon" sizes="192x192" href="/static/images/icons-192.png"/>
                             <link rel="manifest" href="/static/manifest.json"/>
-                            <link rel="manifest" href="/static/site.webmanifest"/>
                             <link rel="shortcut icon" href="/static/images/favicon.ico"/>
                             <title>TheProject</title>
                         </Head>
